@@ -2,6 +2,27 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
+type Blog {
+  id: Int!
+  title: String!
+  body: String!
+  author: String!
+  date: String!
+}
+
 type Query {
   sayHello: String!
+  getAllBlogs: [Blog!]!
+}
+
+type Mutation {
+  createBlog(blogInput: BlogInput!): Blog!
+}
+
+input BlogInput {
+  id: Float!
+  title: String!
+  body: String!
+  author: String!
+  date: String!
 }
