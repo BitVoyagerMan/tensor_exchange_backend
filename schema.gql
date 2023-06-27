@@ -1,0 +1,40 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+"""cat """
+type Cat {
+  name: String!
+  age: Float!
+}
+
+"""auth"""
+type User {
+  id: ID!
+  username: String!
+  is_verified: Float!
+}
+
+type Query {
+  sayHello: String!
+  cats: [Cat!]!
+  sayHelloCats: String!
+  users: [User!]!
+}
+
+type Mutation {
+  signin(signinArgs: SigninArgs!): User!
+  signup(data: UserInput!): User!
+}
+
+input SigninArgs {
+  username: String!
+  password: String!
+}
+
+input UserInput {
+  username: String!
+  password: String!
+  email: String!
+  is_verified: Boolean!
+}

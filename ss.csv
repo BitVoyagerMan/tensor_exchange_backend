@@ -1,0 +1,2 @@
+id,username,roles,password,email,is_verified
+0,minato,{role:admin},123456,tigerrabbit22@outlook.com,false
