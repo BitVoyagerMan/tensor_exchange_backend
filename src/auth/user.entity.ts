@@ -1,8 +1,8 @@
 import { Field, ID, ObjectType } from '@nestjs/graphql';
-import { JSONB } from 'sequelize';
 
 import { Table, Column, Model, PrimaryKey, AutoIncrement, DataType} from 'sequelize-typescript';
-import { Col, Json } from 'sequelize/types/utils';
+import { Role } from 'src/model/role.enum';
+
 
 
 @Table({tableName:'user'})
@@ -18,17 +18,22 @@ export class User extends Model {
     @Column
     username: string;
 
-    @Column(DataType.JSON)
-    roles: JSON
+    @Column
+    roles:string;
 
+    
     
     @Column
     password: string;
-
+    
+    @Field()
     @Column
     email:string;
 
     @Field()
     @Column
     is_verified: number;
+
+    // @Field()
+    // token:string;
 }

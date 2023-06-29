@@ -3,7 +3,6 @@ import { AppService } from './app.service';
 import { GraphQLModule } from '@nestjs/graphql';
 import { ApolloDriver } from '@nestjs/apollo';
 import { AppResolver } from './app.resolver';
-import { CatsModule } from './cat/cats.module';
 import { UsersModule } from './auth/users.module';
 import { SequelizeModule } from '@nestjs/sequelize';
 import {config} from 'dotenv'
@@ -28,7 +27,7 @@ config()
       driver: ApolloDriver,
       autoSchemaFile: 'schema.gql'
     }),
-    CatsModule,
+
     UsersModule,
 
   ],
