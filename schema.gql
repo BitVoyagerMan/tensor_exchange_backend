@@ -2,29 +2,30 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
-"""cat """
-type Cat {
-  name: String!
-  age: Float!
-}
-
 """auth"""
 type User {
   id: ID!
   username: String!
+  email: String!
   is_verified: Float!
+}
+
+type ValToken {
+  valid: Boolean!
+  expiresAt: Float!
 }
 
 type Query {
   sayHello: String!
-  cats: [Cat!]!
   sayHelloCats: String!
   users: [User!]!
 }
 
 type Mutation {
+  currentUser(userId: Float!): User!
   signin(signinArgs: SigninArgs!): User!
   signup(data: UserInput!): User!
+  verifyEmail(token: String!): ValToken!
 }
 
 input SigninArgs {
